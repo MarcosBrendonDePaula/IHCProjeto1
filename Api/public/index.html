@@ -62,15 +62,29 @@
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary" style="background: url(images/greenleafs2.jpg) no-repeat; background-size:100%">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+          <!--BOTOES DE LOGIN E REGISTRO-->
+          <div id="cadastro_login">
+            <div id="login">
+              <button class="mdl-button mdl-js-button" style="color: white; border: 1px solid white; margin-right: 2vw;">
+                Login
+              </button>
+              <button class="mdl-button mdl-js-button" style="color: white; border: 1px solid white;">
+                Registrar-se
+              </button>
+            </div>
+          </div>
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>Floricultura &amp; Amigos</h3>
+          <div id="logo" style="width: 152px; height: 120px; ">
+            <img src="images/logo.png" width="100%" height="100%" alt="">
+          </div>
+          <h3>Eric &amp; Flores</h3>
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
-        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect" style="background-color: rgba(0, 0, 0, 0.4);"><!--BARRA DE MENU-->
           <a href="#overview" class="mdl-layout__tab is-active">Overview</a>
           <a href="#features" class="mdl-layout__tab">Features</a>
           <a href="#features" class="mdl-layout__tab">Details</a>

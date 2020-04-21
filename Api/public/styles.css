@@ -236,3 +236,13 @@ html, body {
 .mdl-demo .mdl-menu__container {
   z-index: 99;
 }
+
+/*--------NOSSA PARTE----------*/
+
+#cadastro_login{
+  display: flex;
+  width: 100%;
+  flex-direction: row-reverse;
+  justify-content: end;
+  
+}
