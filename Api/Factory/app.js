@@ -1,15 +1,14 @@
 const express=require('express')
-const path=require('path')
 const app = express()
-const server = require('http').createServer(app)
+const bodyparser = require('body-parser')
 
-app.use(express.static(path.join(__dirname,'../public')))
-app.set('views',path.join(__dirname,'../public'))
-app.engine('html',require('ejs').renderFile)
-app.set('view engine','html')
-app.use('/',(req,res)=>{
-    res.render('index.html')
-})
+app.use(bodyparser.urlencoded({extended:false}))
+app.use(bodyparser.json())
 
-module.exports=server
-server.listen(3000)
+app.use((req,res,next)=>{
+    res.setHeader('Access-Control-Allow-Origin','*')
+    next()
+}) 
+
+module.exports = app
+app.listen(3000)
