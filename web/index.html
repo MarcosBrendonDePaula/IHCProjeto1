@@ -63,6 +63,16 @@
       margin-bottom: 40px;
       z-index: 900;
     }
+    .carousel-control-prev-maroto,
+    .carousel-control-next-maroto {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
     </style>
   </head>
   <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
@@ -103,7 +113,7 @@
       </header>
       <!--login-->
       <div id="LoginDisplay" class="mdl-layout mdl-js-layout hidden" style="z-index: 15;">
-          <section class="container">
+          <section class="container1">
               <div id="cube" class="show-front">
                   <figure class="front">
                       <div class="mdl-card mdl-shadow--6dp">
@@ -249,6 +259,113 @@
                   </a>
           </div>
       </div>
+
+    <h3 class="container mt-5 text-dark"> <strong>Mais vendidos</strong></h3>
+    <div class="container text-center border-top">
+      <div id="carouselExampleIndicators2" class="carousel slide" data-ride="carousel" data-keyboard="true">
+        <div class="carousel-inner mt-3">
+          <div class="carousel-item active">
+            <div class="row">
+              <div class="col">
+                <div>
+                  <a href=""> <img src="images/flor.jpg" alt="" height="170" width="250"> </a>
+                  <p style="text-align: center; font-size: 25px;"> <strong>Rosa </strong> <br>
+                    R$ 22,00
+                  </p>
+                </div>
+              </div>
+
+              <div class="col">
+                <div>
+                  <a href=""> <img src="images/flor.jpg" alt="" height="170" width="250"> </a>
+                  <p style="text-align: center; font-size: 25px;"> <strong>Rosa </strong> <br>
+                    R$ 22,00
+                  </p>
+                </div>
+              </div>
+
+              <div class="col">
+                <div>
+                  <a href=""> <img src="images/flor.jpg" alt="" height="170" width="250"> </a>
+                  <p style="text-align: center; font-size: 25px;"> <strong>Rosa </strong> <br>
+                    R$ 22,00
+                  </p>
+                </div>
+              </div>
+
+              <div class="col">
+                <div>
+                  <a href=""> <img src="images/flor.jpg" alt="" height="170" width="250"> </a>
+                  <p style="text-align: center; font-size: 25px;"> <strong>Rosa </strong> <br>
+                    R$ 22,00
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="carousel-item">
+            <div class="row">
+              <div class="col">
+                <div>
+                  <a href=""> <img src="images/flor.jpg" alt="" height="170" width="250"> </a>
+                  <p style="text-align: center; font-size: 25px;"> <strong>Rosa </strong> <br>
+                    R$ 22,00
+                  </p>
+                </div>
+              </div>
+
+              <div class="col">
+                <div>
+                  <a href=""> <img src="images/flor.jpg" alt="" height="170" width="250"> </a>
+                  <p style="text-align: center; font-size: 25px;"> <strong>Rosa </strong> <br>
+                    R$ 22,00
+                  </p>
+                </div>
+              </div>
+
+              <div class="col">
+                <div>
+                  <a href=""> <img src="images/flor.jpg" alt="" height="170" width="250"> </a>
+                  <p style="text-align: center; font-size: 25px;"> <strong>Rosa </strong> <br>
+                    R$ 22,00
+                  </p>
+                </div>
+              </div>
+
+              <div class="col">
+                <div>
+                  <a href=""> <img src="images/flor.jpg" alt="" height="170" width="250"> </a>
+                  <p style="text-align: center; font-size: 25px;"> <strong>Rosa </strong> <br>
+                    R$ 22,00
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <a class="carousel-control-prev-maroto" href="#carouselExampleIndicators2" role="button" data-slide="prev"
+          style="left: 0;">
+          <span class="carousel-control-prev-icon bg-dark rounded" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next-maroto" href="#carouselExampleIndicators2" role="button" data-slide="next"
+          style="right: 0;">
+          <span class="carousel-control-next-icon bg-dark rouded" aria-hidden="true"></span>
+          <span class="sr-only">Próximo</span>
+        </a>
+      </div>
+    </div>
+
+
+
+
+
+
+
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
