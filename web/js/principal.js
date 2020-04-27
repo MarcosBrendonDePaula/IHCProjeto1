@@ -18,7 +18,14 @@ function PrepareUser(){
 
 
 
-BtnLogar.addEventListener("click",()=>{
+BtnLogar.addEventListener("click",()=>{ 
     LoginDisplay.classList.toggle("hidden")
+    function ocultar(event){
+        if(event.explicitOriginalTarget.id!="LoginDisplay")
+            return
+        LoginDisplay.classList.toggle("hidden")
+        LoginDisplay.removeEventListener("click",ocultar)
+    }
+    LoginDisplay.addEventListener("click",ocultar)
 })
 PrepareUser()
