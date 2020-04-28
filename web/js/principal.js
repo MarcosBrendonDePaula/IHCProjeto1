@@ -6,41 +6,50 @@ const BtnRegistrar = document.querySelector("#btnregistrar")
 
 //----Manipulando Usuarios
 const singUpButton = document.querySelector("#singUpButton")
-var UsuariosCadastrados={}
-var vetorUser=[]
-function LoadCokkie(){
-    console.log("Atual:  ",document.cookie)
-    if(document.cookie.split('=').length < 2)
-        document.cookie=`Users={"Users":[{"user":"admin","passw":"admin"},{"user":"Marcos","passw":"Melissa5"}]};expires=`+new Date(2020,5,01).toGMTString()+";"
-    let json = JSON.parse(document.cookie.split('=')[1])
-    for (let i of json.Users){
-        UsuariosCadastrados[i.user]={"passw":i.passw}
-    }
-    vetorUser=json.Users
-}
-function cookieReset(){
-    document.cookie=`Users={"Users":[{"user":"admin","passw":"admin"},{"user":"Marcos","passw":"Melissa5"}]};expires=`+new Date(2020,5,01).toGMTString()+";"
-}
-function UpdateUsers(){
-    let str =  'Users={"Users":['
-    for(let i of vetorUser){
-        console.log(i)
-        str+=JSON.stringify(i)+","
-    }
-    str+=']};expires='+new Date(2020,5,01).toGMTString()+";"
-    document.cookie=str
+
+
+var Login_Usuarios=[]
+var Usuarios={}
+
+function setBasicUsers(){
+    var userlist=[]
+    userlist.push({"login":"Marcos","Senha":"azx0025"})
+    userlist.push({"login":"Henri","Senha":"henrixss"})
+    userlist.push({"login":"Eric","Senha":"PacoLoco"})
+    document.cookie=JSON.stringify({"listUsers":userlist})+";expires="+new Date(2030,5,01).toGMTString()+";"
 }
 
-    //Cadastrando Um novo Usuario
-        singUpButton.addEventListener('click',()=>{
-            let passwCampos = document.querySelectorAll(".signPass")
-            let LoginCampo = document.querySelector(".signLogin")
-            if((passwCampos[0].value==passwCampos[1].value) & UsuariosCadastrados[LoginCampo.value]==undefined){
-                UsuariosCadastrados[LoginCampo.value]=passwCampos[0].value
-                vetorUser.push({"user":LoginCampo.value,"passw":passwCampos[0].value})
-                UpdateUsers()
-            }
-        })
+function LoadCokkie(){
+    if(document.cookie.length <= 1)
+        setBasicUsers()
+    let json = JSON.parse(document.cookie)
+    for (let i of json.listUsers){
+        Login_Usuarios.push(i.login)
+        Usuarios[i.login]=i.Senha
+    }
+}
+
+function UpdateUsers(){
+    let Uservector=[]
+    for(let i of Login_Usuarios){
+        console.log(i)
+        Uservector.push({'login':i,'Senha':Usuarios[i]})
+    }
+    document.cookie=JSON.stringify({"listUsers":Uservector})+";expires="+new Date(2030,5,01).toGMTString()+";"
+}
+
+//Cadastrando Um novo Usuario
+singUpButton.addEventListener('click',()=>{
+
+    let passwCampos = document.querySelectorAll(".signPass")
+    let LoginCampo = document.querySelector(".signLogin")
+
+    if((passwCampos[0].value==passwCampos[1].value) & Usuarios[LoginCampo.value]==undefined){
+        Login_Usuarios.push(LoginCampo.value)
+        Usuarios[LoginCampo.value]=passwCampos[1].value
+        UpdateUsers()
+    }
+})
 //---------------------------------------
 
 window.flip = function(flip) {
@@ -78,4 +87,4 @@ BtnLogar.addEventListener("click",()=>{
 
 
 PrepareUser()
-//LoadCokkie()
+LoadCokkie()
