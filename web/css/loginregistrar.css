@@ -1,6 +1,11 @@
 .hidden{
     display:none;
 }
+
+.noScroll{
+    overflow-y: hidden;
+}
+
 .container1 {
     position: absolute;
     left: 50%;
