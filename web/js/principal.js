@@ -63,12 +63,14 @@ function PrepareUser(){
 
 BtnLogar.addEventListener("click",()=>{ 
     LoginDisplay.classList.toggle("hidden")
+    document.querySelector('#corpo').style.overflow = 'hidden'
     function ocultar(event){
         if(event.target.id!="LoginDisplay")
             return
         LoginDisplay.classList.toggle("hidden")
         document.querySelector("body").classList.remove('noScroll')
         LoginDisplay.removeEventListener("click",ocultar)
+        document.querySelector('#corpo').style.overflow = 'visible'
     }
     LoginDisplay.addEventListener("click",ocultar)
 })
