@@ -40,7 +40,6 @@ function UpdateUsers(){
 
 //Cadastrando Um novo Usuario
 singUpButton.addEventListener('click',()=>{
-
     let passwCampos = document.querySelectorAll(".signPass")
     let LoginCampo = document.querySelector(".signLogin")
 
