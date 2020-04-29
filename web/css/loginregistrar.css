@@ -6,6 +6,13 @@
     overflow-y: hidden;
 }
 
+#cadastro_login{/*Posicao do botao de login*/
+    display: flex;
+    width: 100%;
+    flex-direction: row-reverse;
+    justify-content: end;
+  }
+
 #LoginDisplay{
     background-color: rgba(0, 0, 0, 0.9);
 }

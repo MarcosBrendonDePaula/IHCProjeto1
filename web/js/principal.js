@@ -81,3 +81,9 @@ window.flip = function(flip) {
 if(sessionStorage.getItem("Users")!=undefined)
     Usuarios = JSON.parse(sessionStorage.getItem("Users"))
 PrepareUser()
+
+
+function trocar_fundo(str1, str2){
+    var botao = document.querySelector('#' + str1)
+    botao.style = 'background: url(images/'+ str2 +'.png) no-repeat; background-size:100%'
+}
