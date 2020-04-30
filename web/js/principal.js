@@ -10,6 +10,7 @@ const btnCarrinho = document.querySelector(".btcarrinho")
 const singUpButton = document.querySelector("#singUpButton")
 
 var Usuarios={}
+var Carrinho_Itens = []
 
 //Cadastrando Um novo Usuario
 singUpButton.addEventListener('click',()=>{
@@ -37,6 +38,9 @@ document.querySelector(".btnEntrar").addEventListener("click",()=>{
 
 function PrepareUser(){
     if(sessionStorage.getItem("User")!=undefined){
+        for(let i of JSON.parse(sessionStorage.getItem("User")).cart){
+            Carriho(i.nome,i.imagem,i.preco)
+        }
         let btn = document.createElement('button')
         let btn_sair = document.createElement('button')
         btn.style.color="white";
@@ -61,8 +65,22 @@ function PrepareUser(){
     }
 }
 
+function AtualizarCarrinho(){
+    let value=0
+    for(let i of Carrinho_Itens){
+        value+=i.preco
+    }
+    if(sessionStorage.getItem('User')!=undefined){
+        let json = JSON.parse(sessionStorage.getItem('User'))
+        json.cart=Carrinho_Itens
+        sessionStorage.setItem('User',JSON.stringify(json))
+    }
+    document.querySelector("#Totalcarrinho").textContent ="Total R$: "+value
+}
+
 function Carriho(nome,imagem,preco){
     let div,img,label;
+    Carrinho_Itens.push({"nome":nome,"imagem":imagem,"preco":preco})
     div = document.createElement("div")
     img = document.createElement("img")
     label = document.createElement("label")
@@ -78,6 +96,7 @@ function Carriho(nome,imagem,preco){
     div.appendChild(img)
     div.appendChild(label)
     document.querySelector(".itemlist").appendChild(div)
+    AtualizarCarrinho()
 }
 
 BtnLogar.addEventListener("click",()=>{ 
