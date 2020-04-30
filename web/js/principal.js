@@ -62,7 +62,22 @@ function PrepareUser(){
 }
 
 function Carriho(nome,imagem,preco){
-    console.log(nome,imagem,preco)
+    let div,img,label;
+    div = document.createElement("div")
+    img = document.createElement("img")
+    label = document.createElement("label")
+    div.classList.add('mdl-list__item','mdl-shadow--4dp')
+    div.style.marginBottom = "10px"; 
+    img.src=imagem
+    img.id="img"
+    img.classList.add("mdl-list__item-avatar")
+    img.style.padding = "1px";
+    label.classList.add("mdl-list__item-text-body")
+    label.htmlFor="img"
+    label.textContent=nome+" R$:"+preco
+    div.appendChild(img)
+    div.appendChild(label)
+    document.querySelector(".itemlist").appendChild(div)
 }
 
 BtnLogar.addEventListener("click",()=>{ 
