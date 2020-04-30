@@ -1,8 +1,10 @@
 const LoginInteface = document.querySelector("#login")
 const LoginDisplay = document.querySelector("#LoginDisplay")
+const carrinhoInterface = document.querySelector("#Carrinho")
 
 const BtnLogar = document.querySelector("#btnLogin")
 const BtnRegistrar = document.querySelector("#btnregistrar")
+const btnCarrinho = document.querySelector(".btcarrinho")
 
 //----Manipulando Usuarios
 const singUpButton = document.querySelector("#singUpButton")
@@ -59,6 +61,10 @@ function PrepareUser(){
     }
 }
 
+function Carriho(nome,imagem,preco){
+    console.log(nome,imagem,preco)
+}
+
 BtnLogar.addEventListener("click",()=>{ 
     LoginDisplay.classList.toggle("hidden")
     document.querySelector('#corpo').style.overflow = 'hidden'
@@ -71,6 +77,10 @@ BtnLogar.addEventListener("click",()=>{
         document.querySelector('#corpo').style.overflow = 'visible'
     }
     LoginDisplay.addEventListener("click",ocultar)
+})
+
+btnCarrinho.addEventListener("click",()=>{
+    carrinhoInterface.classList.toggle("hidden");
 })
 
 window.flip = function(flip) {
