@@ -40,7 +40,7 @@ function PrepareUser(){
         btn.style.color="white";
         btn.style.border="1px solid white"
         btn.style.marginRight="2vw";
-        btn.innerText ="Logado :> "+ JSON.parse(sessionStorage.getItem("User")).login
+        btn.innerText ="LOGADO: "+ JSON.parse(sessionStorage.getItem("User")).login
         btn.classList.add('mdl-button')
         btn.classList.add('mdl-js-button')
         btn_sair.style.color="red";
