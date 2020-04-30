@@ -58,7 +58,12 @@
     <!-- MDL -->
 	  <link rel="stylesheet" href="mdl/material.min.css">
 	  <script src="mdl/material.min.js"></script>
-	  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <!--getmdl-select-->   
+    <link rel="stylesheet" href="mdl/getmdl-select/getmdl-select.min.css">
+    <script defer src="mdl/getmdl-select/getmdl-select.min.js"></script>
+
 	  <!-- MDL -->
 
     
@@ -125,6 +130,21 @@
           <a style="color: white;" href="#features" class="mdl-layout__tab">Details</a>
           <a style="color: white;" href="#features" class="mdl-layout__tab">Technology</a>
           <a style="color: white;" href="#features" class="mdl-layout__tab">FAQ</a>
+          
+         
+          <!-- Simple Select -->
+          <div class="mdl-textfield mdl-js-textfield getmdl-select" style="width: 112px;">
+            <input type="text" value="" class="mdl-textfield__input" id="sample1" readonly>
+            <input type="hidden" value="" name="sample1">
+            
+            <ul for="sample1" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+                <li class="mdl-menu__item" data-val="DEU" data-selected="true" style="display: none;">Tipos de Flores</li>
+                <a href="https://www.facebook.com" style="text-decoration: none;"> <li class="mdl-menu__item" data-val="BLR">Rosas</li> </a>
+                <a href="" style="text-decoration: none;"> <li class="mdl-menu__item" data-val="RUS">Tulipas</li> </a>
+            </ul>
+          </div>
+        
+
           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent btcarrinho" id="add">
             <i class="material-icons" role="presentation">shopping_cart</i>
             <span class="visuallyhidden">Add</span>
