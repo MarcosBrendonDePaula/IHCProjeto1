@@ -52,18 +52,26 @@ function PrepareUser(){
         }
         let btn = document.createElement('button')
         let btn_sair = document.createElement('button')
+        let icone = document.createElement('i')
+        let iconeSair = document.createElement('i')
+        icone.classList.add("material-icons")
+        icone.textContent="account_circle"
+        iconeSair.classList.add("material-icons")
+        iconeSair.textContent="exit_to_app"
         btn.style.color="white";
         btn.style.border="1px solid white"
         btn.style.marginRight="2vw";
-        btn.innerText ="LOGADO: "+ JSON.parse(sessionStorage.getItem("User")).login
+        btn.innerText ="LOGADO: "+ JSON.parse(sessionStorage.getItem("User")).login+"  "
         btn.classList.add('mdl-button')
         btn.classList.add('mdl-js-button')
+        btn.appendChild(icone)
         btn_sair.style.color="red";
         btn_sair.style.border="1px solid white"
         btn_sair.style.marginRight="2vw";
-        btn_sair.innerText ="Sair"
+        btn_sair.innerText ="Sair  "
         btn_sair.classList.add('mdl-button')
         btn_sair.classList.add('mdl-js-button')
+        btn_sair.appendChild(iconeSair)
         LoginInteface.innerHTML=""
         LoginInteface.appendChild(btn)
         LoginInteface.appendChild(btn_sair)
