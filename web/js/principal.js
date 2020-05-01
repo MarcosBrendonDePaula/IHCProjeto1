@@ -16,13 +16,19 @@ var Carrinho_Itens = []
 singUpButton.addEventListener('click',()=>{
     let passwCampos = document.querySelectorAll(".signPass")
     let LoginCampo = document.querySelector(".signLogin")
-
-    if((passwCampos[0].value==passwCampos[1].value) & Usuarios[LoginCampo.value]==undefined){
+    if( Usuarios[LoginCampo.value]!=undefined){
+        document.querySelector("#statsRegistrar").textContent="Usuario Já Cadastrado"
+        return
+    }
+    if((passwCampos[0].value==passwCampos[1].value)){
         Usuarios[LoginCampo.value]={"passw":passwCampos[1].value,"cart":[]}
         sessionStorage.setItem("Users",JSON.stringify(Usuarios))
         sessionStorage.setItem("User",JSON.stringify({"login":LoginCampo.value,"passw":passwCampos[1].value,"cart":[]}))
         location.reload()
+    }else{
+        document.querySelector("#statsRegistrar").textContent="As senhas Não coicidem"
     }
+        
 })
 //---------------------------------------
 document.querySelector(".btnEntrar").addEventListener("click",()=>{
@@ -33,7 +39,10 @@ document.querySelector(".btnEntrar").addEventListener("click",()=>{
         Usuarios[login].login = login
         sessionStorage.setItem("User",JSON.stringify(Usuarios[login]))
         location.reload()
+    }else{
+        document.querySelector("#statsLogin").textContent = "Erro de Login Verifique Seu Usuario e Senha"
     }
+        
 })
 
 function PrepareUser(){
@@ -77,6 +86,7 @@ function AtualizarCarrinho(){
     }
     document.querySelector("#Totalcarrinho").textContent ="Total R$: "+value
 }
+
 
 function Carriho(nome,imagem,preco){
     let div,img,label;
