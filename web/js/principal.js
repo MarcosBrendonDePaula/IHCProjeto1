@@ -149,3 +149,23 @@ function trocar_fundo(str1, str2){
     var botao = document.querySelector('#' + str1)
     botao.style = 'background: url(images/'+ str2 +'.png) no-repeat; background-size:100%'
 }
+
+function shadow(id, str){
+    var flor = document.querySelector('#' + id)
+    if (str === 'add')
+        flor.classList.add('shadow-lg')
+    else
+        flor.classList.remove('shadow-lg')
+}
+
+function cars(id, str, preco){
+    var flor = document.querySelector('#' + id)
+    if (str === 'add'){
+        flor.classList.add('material-icons')
+        flor.innerText = 'add_shopping_cart'
+    }else{
+        flor.classList.remove('material-icons')
+        flor.innerText = preco
+    }
+
+}
