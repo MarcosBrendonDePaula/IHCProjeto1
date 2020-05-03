@@ -125,31 +125,36 @@
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
-        <div class="mdl-layout__tab-bar mdl-js-ripple-effect" style="background-color: rgba(0, 0, 0, 0.4);"><!--BARRA DE MENU-->
-          <a style="color: white;" href="#overview" class="mdl-layout__tab is-active">Início</a>
-          <a style="color: white;" href="#features" class="mdl-layout__tab">Features</a>
-          <a style="color: white;" href="#features" class="mdl-layout__tab">Details</a>
-          <a style="color: white;" href="#features" class="mdl-layout__tab">Technology</a>
-          <a style="color: white;" href="#features" class="mdl-layout__tab">FAQ</a>
-          
-         
-          <!-- Simple Select -->
-          <div class="mdl-textfield mdl-js-textfield getmdl-select" style="width: 112px;">
-            <input type="text" value="" class="mdl-textfield__input" id="sample1" readonly>
-            <input type="hidden" value="" name="sample1">
-            
-            <ul for="sample1" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
-                <li class="mdl-menu__item" data-val="DEU" data-selected="true" style="display: none;">Tipos de Flores</li>
-                <a href="https://www.facebook.com" style="text-decoration: none;"> <li class="mdl-menu__item" data-val="BLR">Rosas</li> </a>
-                <a href="" style="text-decoration: none;"> <li class="mdl-menu__item" data-val="RUS">Tulipas</li> </a>
-            </ul>
-          </div>
-          <button class="mdl-button mdl-js-button mdl-button--fab mdl-list__item-secondary-content mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent btcarrinho" id="add">
-            <i class="material-icons" role="presentation">shopping_cart</i>
-            <span class="visuallyhidden">Add</span>
-          </button>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect" style="background-color: rgba(0, 0, 0, 0.4);">
+          <!--BARRA DE MENU-->
+        <a style="color: white;" href="index.html" class="mdl-layout__tab">Início</a>
+        <a style="color: white;" href="" class="mdl-layout__tab" type="button" data-toggle="dropdown" id="dropdownTiposFlores" aria-haspopup="true" aria-expanded="false">Tipos de flores</a>
+        <div class="dropdown-menu" aria-labelledby="dropdownTiposFlores">
+            <a class="dropdown-item" href="#">Rosas</a>
+            <a class="dropdown-item" href="#">Tulipas</a>
+            <a class="dropdown-item" href="#">Margaridas</a>
         </div>
-      </header>
+        
+        <div class="dropdown">
+          <a style="color: white;" href="" class="mdl-layout__tab" type="button" data-toggle="dropdown" id="dropdownDatas" aria-haspopup="true" aria-expanded="false">Datas comemorativas</a>
+          <div class="dropdown-menu" aria-labelledby="dropdownDatas">
+            <a class="dropdown-item" href="#">Dias dos namorados</a>
+            <a class="dropdown-item" href="#">Dia das mães</a>
+            <a class="dropdown-item" href="#">Dia das mulheres</a>
+          </div>
+        </div>
+
+        <a style="color: white;" href="ajuda.html" class="mdl-layout__tab">Ajuda</a>
+        <a style="color: white;" href="sobre.html" class="mdl-layout__tab">Sobre</a>
+
+        <button
+          class="mdl-button mdl-js-button mdl-button--fab mdl-list__item-secondary-content mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent btcarrinho"
+          id="add">
+          <i class="material-icons" role="presentation">shopping_cart</i>
+          <span class="visuallyhidden">Add</span>
+        </button>
+      </div>
+    </header>
       <!--login-->
       <div id="LoginDisplay" class="mdl-layout mdl-js-layout hidden" style="z-index: 20;">
         <section class="container1">
